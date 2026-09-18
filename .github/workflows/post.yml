@@ -1,0 +1,60 @@
+name: Rappels de publication
+
+# Envoie une notif ntfy à chaque créneau (8h,10h,...,22h heure de Paris) avec le
+# prochain clip à poster. Tourne dans le cloud (indépendant de ton PC).
+#
+# GitHub planifie en UTC uniquement. Paris = UTC+1 (hiver) ou UTC+2 (été), donc
+# on lance toutes les 30 min sur une large plage UTC (6h→21h) qui couvre les
+# deux cas, et post.py décide s'il est vraiment l'heure d'un créneau parisien.
+on:
+  schedule:
+    - cron: "0,30 6-21 * * *"
+  workflow_dispatch:      # bouton "Run workflow" pour tester à la main
+    inputs:
+      test:
+        description: "Envoyer une notif de test au lieu d'un vrai rappel"
+        type: boolean
+        default: false
+
+# Un seul run à la fois (évite les envois en double).
+concurrency:
+  group: post
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # pour réenregistrer data/publish_queue.json entre les runs
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Envoyer le rappel du créneau
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TEST: ${{ inputs.test }}
+        run: |
+          if [ "$TEST" = "true" ]; then
+            python post.py --test
+          else
+            python post.py
+          fi
+
+      - name: Sauvegarder la file (si changée)
+        run: |
+          if [ -n "$(git status --porcelain data/publish_queue.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/publish_queue.json
+            git commit -m "maj file de publication"
+            git push
+          else
+            echo "Aucun changement de file."
+          fi
