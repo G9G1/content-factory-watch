@@ -1,0 +1,46 @@
+name: Surveillance YouTube
+
+# Tourne toutes les 15 min dans le cloud (indépendant de ton PC).
+# Note : les horaires GitHub sont "au mieux" et peuvent avoir quelques minutes
+# de retard sous charge, ce qui est sans importance ici.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}   # bouton "Run workflow" pour tester à la main
+
+# Un seul run à la fois (évite les envois en double).
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # pour réenregistrer data/watch_state.json entre les runs
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Vérifier les chaînes et notifier
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python watch.py
+
+      - name: Sauvegarder l'état (si changé)
+        run: |
+          if [ -n "$(git status --porcelain data/watch_state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/watch_state.json
+            git commit -m "maj état surveillance"
+            git push
+          else
+            echo "Aucun changement d'état."
+          fi
