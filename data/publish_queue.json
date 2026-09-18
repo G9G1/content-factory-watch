@@ -1,4 +1,158 @@
 {
-  "items": [],
+  "items": [
+    {
+      "clip_id": "TkbNbL_0HCI_clip1",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "On a braqué une banque en Géorgie...",
+      "description": "Le concept le plus fou d'Inoxtag : braquer une vraie banque avec des otages, une équipe et 24h chrono",
+      "hashtags": [
+        "#inoxtag",
+        "#braquage",
+        "#casse",
+        "#viral",
+        "#experience"
+      ],
+      "cta": "Abonne-toi pour voir la suite du casse !",
+      "score": 95,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip2",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Le chien du directeur nous a donné le code secret",
+      "description": "Personne n'aurait pensé à utiliser le chien pour trouver le code de la salle des travaux, génial",
+      "hashtags": [
+        "#chien",
+        "#inoxtag",
+        "#braquage",
+        "#astuce",
+        "#genie"
+      ],
+      "cta": "Abonne-toi pour plus de moments comme ça !",
+      "score": 92,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip3",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Le traducteur géorgien qui nous a bien fait rire",
+      "description": "Cette scène avec le traducteur est un pur moment de comédie pendant le braquage",
+      "hashtags": [
+        "#humour",
+        "#inoxtag",
+        "#braquage",
+        "#drole",
+        "#fun"
+      ],
+      "cta": "Like si ça t'a fait rire aussi !",
+      "score": 90,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip4",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Catastrophe : on a tout perdu en même temps",
+      "description": "Le moment où tout s'effondre pour l'équipe de braqueurs pendant l'assaut",
+      "hashtags": [
+        "#drame",
+        "#inoxtag",
+        "#braquage",
+        "#catastrophe",
+        "#tension"
+      ],
+      "cta": "Abonne-toi pour voir comment ils s'en sortent !",
+      "score": 89,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip5",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Le premier appel avec le négociateur",
+      "description": "Négocier avec la police pendant un braquage, ce n'est jamais simple",
+      "hashtags": [
+        "#negociation",
+        "#tension",
+        "#inoxtag",
+        "#police",
+        "#braquage"
+      ],
+      "cta": "Regarde comment ça continue !",
+      "score": 88,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip6",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Le compte en banque du directeur est hors de contrôle",
+      "description": "Les révélations financières les plus improbables jamais trouvées pendant un braquage",
+      "hashtags": [
+        "#drole",
+        "#inoxtag",
+        "#compte",
+        "#squeezie",
+        "#braquage"
+      ],
+      "cta": "Partage si tu as autant rigolé que nous !",
+      "score": 87,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip8",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "L'arnaque au négociateur - stratégie de génie",
+      "description": "Une idée brillante pour tromper le négociateur et gagner en information",
+      "hashtags": [
+        "#strategie",
+        "#inoxtag",
+        "#braquage",
+        "#intelligent",
+        "#deal"
+      ],
+      "cta": "Dis-nous en commentaire si tu aurais fait pareil !",
+      "score": 85,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip9",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "Le négociateur veut nous trahir la police ?!",
+      "description": "Un moment clé où la relation avec le négociateur devient plus complexe",
+      "hashtags": [
+        "#negociation",
+        "#inoxtag",
+        "#strategie",
+        "#twist",
+        "#braquage"
+      ],
+      "cta": "Follow pour la suite de cette négociation folle !",
+      "score": 84,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "TkbNbL_0HCI_clip10",
+      "source": "24H POUR BRAQUER UNE BANQUE (Ft Djilsi, Billy, Byilhan, Cocotte et Nico)",
+      "title": "On a négocié des gants de boxe au lieu d'armes",
+      "description": "Le négociateur ne comprend plus rien à nos demandes, et c'est hilarant",
+      "hashtags": [
+        "#humour",
+        "#inoxtag",
+        "#negociation",
+        "#absurde",
+        "#fun"
+      ],
+      "cta": "Like si tu trouves ça aussi absurde que nous !",
+      "score": 82,
+      "posted_at": null,
+      "slot": null
+    }
+  ],
   "last_post_ts": 0
 }
