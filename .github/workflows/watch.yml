@@ -6,7 +6,12 @@ name: Surveillance YouTube
 on:
   schedule:
     - cron: "*/15 * * * *"
-  workflow_dispatch: {}   # bouton "Run workflow" pour tester à la main
+  workflow_dispatch:      # bouton "Run workflow" pour lancer à la main
+    inputs:
+      test:
+        description: "Envoyer une notif de test au lieu de vérifier les chaînes"
+        type: boolean
+        default: false
 
 # Un seul run à la fois (évite les envois en double).
 concurrency:
@@ -31,7 +36,13 @@ jobs:
       - name: Vérifier les chaînes et notifier
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-        run: python watch.py
+          TEST: ${{ inputs.test }}
+        run: |
+          if [ "$TEST" = "true" ]; then
+            python watch.py --test
+          else
+            python watch.py
+          fi
 
       - name: Sauvegarder l'état (si changé)
         run: |
