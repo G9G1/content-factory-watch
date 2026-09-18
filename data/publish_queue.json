@@ -14,8 +14,8 @@
       ],
       "cta": "Abonne-toi pour voir la suite du casse !",
       "score": 95,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-18 20:58:12",
+      "slot": "20:58"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip2",
@@ -290,5 +290,5 @@
       "slot": null
     }
   ],
-  "last_post_ts": 0
+  "last_post_ts": 1789757892.500554
 }
