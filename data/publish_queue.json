@@ -31,8 +31,8 @@
       ],
       "cta": "Abonne-toi pour plus de moments comme ça !",
       "score": 92,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-19 12:12:40",
+      "slot": "12:12"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip3",
@@ -290,5 +290,5 @@
       "slot": null
     }
   ],
-  "last_post_ts": 1789757892.500554
+  "last_post_ts": 1789812760.665632
 }
