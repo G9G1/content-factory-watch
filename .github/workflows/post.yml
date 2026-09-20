@@ -1,14 +1,15 @@
 name: Rappels de publication
 
-# Envoie une notif ntfy à chaque créneau (8h,10h,...,22h heure de Paris) avec le
+# Envoie une notif ntfy 1 fois par heure, de 7h à 23h (heure de Paris), avec le
 # prochain clip à poster. Tourne dans le cloud (indépendant de ton PC).
 #
-# GitHub planifie en UTC uniquement. Paris = UTC+1 (hiver) ou UTC+2 (été), donc
-# on lance toutes les 30 min sur une large plage UTC (6h→21h) qui couvre les
-# deux cas, et post.py décide s'il est vraiment l'heure d'un créneau parisien.
+# On se réveille toutes les 15 min toute la journée (dépôt public = minutes
+# GitHub illimitées). post.py décide de l'heure de Paris et n'envoie qu'UN
+# rappel par heure d'horloge -> robuste aux changements d'heure été/hiver et
+# aux réveils sautés/retardés par GitHub.
 on:
   schedule:
-    - cron: "0,30 6-21 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:      # bouton "Run workflow" pour tester à la main
     inputs:
       test:

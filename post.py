@@ -1,10 +1,15 @@
 """
 Rappels de publication dans le cloud (GitHub Actions).
 
-À chaque créneau (08:00, 10:00, ... 22:00, heure de Paris), envoie une notif
-ntfy avec le prochain clip à poster : titre + légende + hashtags prêts à
-copier-coller. Tu publies MANUELLEMENT depuis ton iPhone le clip correspondant
-de ta pellicule (Photos), sur YouTube Short + Instagram + TikTok.
+Une fois par heure, de 07:00 à 23:00 (heure de Paris), envoie une notif ntfy
+avec le prochain clip à poster : titre + légende + hashtags prêts à copier-
+coller. Tu publies MANUELLEMENT depuis ton iPhone le clip correspondant de ta
+pellicule (Photos), sur YouTube Short + Instagram + TikTok.
+
+Fiabilité : le workflow se réveille souvent (toutes les ~15 min) mais on
+n'envoie qu'UN rappel par heure d'horloge (repère `last_slot_key`). Ainsi,
+même si GitHub saute ou retarde un réveil, le rappel de l'heure part quand même
+dès le prochain réveil de la même heure (logique « auto-rattrapante »).
 
 Tourne dans le cloud (indépendant du PC de Gaëtan, souvent éteint). La file
 d'attente (data/publish_queue.json) est alimentée depuis le PC par
@@ -12,7 +17,7 @@ d'attente (data/publish_queue.json) est alimentée depuis le PC par
 déjà dans la pellicule iPhone via iCloud.
 
 Usage :
-    python post.py            # si on est dans un créneau, notifie le prochain clip
+    python post.py            # si l'heure n'a pas encore eu son rappel, l'envoie
     python post.py --force    # notifie tout de suite (ignore l'heure), pour tester
     python post.py --test     # simple notif de test
 """
@@ -33,11 +38,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 QUEUE_PATH = os.path.join(ROOT, "data", "publish_queue.json")
 
 PLATFORMS = ["YouTube Short", "Instagram", "TikTok"]
-# Créneaux (heure de Paris) : toutes les 2 h de 8 h à 22 h -> 8 heures paires.
-SLOT_HOURS = {8, 10, 12, 14, 16, 18, 20, 22}
-# Garde anti double-envoi : si un post a eu lieu il y a moins de ça, on saute
-# (le workflow tourne plusieurs fois par créneau ; ça garantit 1 notif/créneau).
-MIN_GAP_SECONDS = 90 * 60
+# Créneaux (heure de Paris) : toutes les heures de 7 h à 23 h inclus -> 17/jour.
+SLOT_HOURS = set(range(7, 24))  # {7, 8, ..., 23}
 
 
 def now_paris() -> datetime:
@@ -93,20 +95,29 @@ def _caption(item: dict) -> str:
 
 def post_next(force: bool = False) -> None:
     q = load_queue()
-    now = time.time()
     t = now_paris()
+
+    # Clé unique de l'heure en cours (ex. "2026-09-20-14"). On n'envoie qu'un
+    # seul rappel par heure d'horloge : si cette heure a déjà eu le sien, on
+    # saute ; sinon on l'envoie, même si GitHub s'est réveillé en retard.
+    hour_key = t.strftime("%Y-%m-%d-%H")
 
     if not force:
         if t.hour not in SLOT_HOURS:
-            print(f"Hors créneau (il est {t.strftime('%H:%M')} à Paris). Rien à envoyer.")
+            print(f"Hors plage (il est {t.strftime('%H:%M')} à Paris). Rien à envoyer.")
             return
-        if now - q.get("last_post_ts", 0) < MIN_GAP_SECONDS:
-            print("Un rappel a déjà été envoyé récemment (<90 min). On saute.")
+        if q.get("last_slot_key") == hour_key:
+            print(f"Rappel déjà envoyé pour l'heure {t.strftime('%H')} h. On saute.")
             return
 
     nxt = next((it for it in q["items"] if it.get("posted_at") is None), None)
     if nxt is None:
         print("File d'attente vide : plus de clips à publier.")
+        # On marque quand même l'heure comme traitée pour ne pas re-scruter en
+        # boucle une file vide à chaque réveil de la même heure.
+        if not force:
+            q["last_slot_key"] = hour_key
+            save_queue(q)
         return
 
     slot = t.strftime("%H:%M")
@@ -119,7 +130,7 @@ def post_next(force: bool = False) -> None:
 
     nxt["posted_at"] = t.strftime("%Y-%m-%d %H:%M:%S")
     nxt["slot"] = slot
-    q["last_post_ts"] = now
+    q["last_slot_key"] = hour_key
     save_queue(q)
     pending = sum(1 for it in q["items"] if it.get("posted_at") is None)
     print(f"{'Notif envoyée' if ok else 'Echec notif'} — « {nxt['title']} » "
