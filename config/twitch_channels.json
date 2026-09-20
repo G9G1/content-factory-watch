@@ -1,3 +1,22 @@
 [
-  { "name": "Nico_La", "user": "nico_la" }
+  { "name": "Nico_La", "user": "nico_la" },
+  { "name": "Squeezie", "user": "squeezie" },
+  { "name": "Domingo", "user": "domingo" },
+  { "name": "ZeratoR", "user": "zerator" },
+  { "name": "Ponce", "user": "ponce" },
+  { "name": "Antoine Daniel", "user": "antoinedaniel" },
+  { "name": "MisterMV", "user": "mistermv" },
+  { "name": "Jean Massiet", "user": "jeanmassiet" },
+  { "name": "Baghera Jones", "user": "bagherajones" },
+  { "name": "Maghla", "user": "maghla" },
+  { "name": "Gotaga", "user": "gotaga" },
+  { "name": "Kameto", "user": "kamet0" },
+  { "name": "Sardoche", "user": "sardoche" },
+  { "name": "Locklear", "user": "locklear" },
+  { "name": "Michou", "user": "michou" },
+  { "name": "AmineMaTue", "user": "aminematue" },
+  { "name": "Skyyart", "user": "skyyart" },
+  { "name": "Alderiate", "user": "alderiate" },
+  { "name": "Rivenzi", "user": "rivenzi" },
+  { "name": "LittleBigWhale", "user": "littlebigwhale" }
 ]
