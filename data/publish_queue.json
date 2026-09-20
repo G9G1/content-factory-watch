@@ -48,8 +48,8 @@
       ],
       "cta": "Like si ça t'a fait rire aussi !",
       "score": 90,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-20 12:31:04",
+      "slot": "12:31"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip4",
@@ -290,5 +290,5 @@
       "slot": null
     }
   ],
-  "last_post_ts": 1789812760.665632
+  "last_post_ts": 1789900264.1841888
 }
