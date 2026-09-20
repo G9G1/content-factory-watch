@@ -1,0 +1,58 @@
+name: Surveillance clips Twitch
+
+# Vérifie les nouveaux clips Twitch des streamers surveillés et envoie une
+# notif groupée. Tourne dans le cloud (dépôt public = minutes illimitées).
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Envoyer une notif de test au lieu de vérifier"
+        type: boolean
+        default: false
+
+concurrency:
+  group: twitch-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # pour réenregistrer data/twitch_watch_state.json
+
+jobs:
+  twitch-watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer yt-dlp
+        run: pip install --quiet yt-dlp
+
+      - name: Vérifier les clips et notifier
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          TEST: ${{ inputs.test }}
+        run: |
+          if [ "$TEST" = "true" ]; then
+            python twitch_watch.py --test
+          else
+            python twitch_watch.py
+          fi
+
+      - name: Sauvegarder l'état (si changé)
+        run: |
+          if [ -n "$(git status --porcelain data/twitch_watch_state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/twitch_watch_state.json
+            git commit -m "maj état surveillance twitch"
+            git push
+          else
+            echo "Aucun changement d'état."
+          fi
