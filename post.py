@@ -93,6 +93,38 @@ def _caption(item: dict) -> str:
     return "\n\n".join(p for p in parts if p)
 
 
+def _pick_next(items: list) -> dict:
+    """
+    Choisit le prochain clip à poster en ALTERNANT les sources (tourniquet).
+
+    On envoie le 1er clip de chaque source, puis le 2e de chaque source, etc.
+    -> la chaîne poste varié (vidéo A, vidéo B, Twitch, vidéo A...) au lieu de
+    dérouler les 10 clips d'une même vidéo à la suite.
+
+    Méthode : pour chaque clip on calcule son rang dans SA source (sur toute la
+    file, clips déjà postés inclus, pour que l'alternance reste stable au fil
+    des envois), puis parmi les clips restants on prend le plus petit rang ; à
+    rang égal, on suit l'ordre d'apparition des sources.
+    """
+    counts, abs_rank = {}, []
+    source_order = {}
+    for it in items:
+        s = it.get("source", "")
+        abs_rank.append(counts.get(s, 0))
+        counts[s] = counts.get(s, 0) + 1
+        if s not in source_order:
+            source_order[s] = len(source_order)
+
+    best, best_key = None, None
+    for idx, it in enumerate(items):
+        if it.get("posted_at") is not None:
+            continue
+        key = (abs_rank[idx], source_order.get(it.get("source", ""), 0))
+        if best_key is None or key < best_key:
+            best, best_key = it, key
+    return best
+
+
 def post_next(force: bool = False) -> None:
     q = load_queue()
     t = now_paris()
@@ -110,7 +142,7 @@ def post_next(force: bool = False) -> None:
             print(f"Rappel déjà envoyé pour l'heure {t.strftime('%H')} h. On saute.")
             return
 
-    nxt = next((it for it in q["items"] if it.get("posted_at") is None), None)
+    nxt = _pick_next(q["items"])
     if nxt is None:
         print("File d'attente vide : plus de clips à publier.")
         # On marque quand même l'heure comme traitée pour ne pas re-scruter en
