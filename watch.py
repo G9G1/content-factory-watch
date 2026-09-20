@@ -11,13 +11,16 @@ Le premier lancement se contente d'enregistrer l'état actuel SANS notifier
 (sinon tu recevrais 22 notifications d'un coup). Ensuite, seules les vraies
 nouveautés déclenchent une alerte.
 
+Les YouTube Shorts sont IGNORÉS : seules les vraies vidéos (format long)
+déclenchent une notification.
+
 Usage :
     python watch.py           # vérifie et notifie les nouveautés
     python watch.py --test    # envoie une notif de test sur ton téléphone
     python watch.py --reset   # ré-enregistre l'état actuel comme référence
 
-À planifier toutes les 15-30 min via le Planificateur de tâches Windows
-(voir watch.bat).
+Tourne dans le cloud (GitHub Actions) toutes les 5 min : voir
+.github/workflows/watch.yml.
 """
 import os
 import sys
@@ -100,25 +103,41 @@ def save_state(state: dict) -> None:
         json.dump(state, f, ensure_ascii=False, indent=2)
 
 
-def fetch_latest(channel_id: str) -> dict:
-    """Retourne la vidéo la plus récente d'une chaîne, ou None."""
+def _is_short(entry) -> bool:
+    """
+    Un Short ou une vraie vidéo ? Le flux RSS le dit déjà : le lien
+    <link rel="alternate"> pointe vers .../shorts/ID pour un Short et vers
+    .../watch?v=ID pour une vidéo classique. Aucune requête en plus, fiable.
+    """
+    for link in entry.findall("atom:link", NS):
+        if link.get("rel") == "alternate":
+            return "/shorts/" in (link.get("href") or "")
+    return False
+
+
+def fetch_entries(channel_id: str) -> list:
+    """
+    Retourne les vidéos de la chaîne, de la plus récente à la plus ancienne.
+    Chaque élément : {video_id, title, url, is_short}.
+    """
     url = RSS_URL.format(cid=channel_id)
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=15) as resp:
         xml = resp.read()
     root = ET.fromstring(xml)
-    entry = root.find("atom:entry", NS)
-    if entry is None:
-        return None
-    vid = entry.find("yt:videoId", NS)
-    title = entry.find("atom:title", NS)
-    published = entry.find("atom:published", NS)
-    return {
-        "video_id": vid.text if vid is not None else None,
-        "title": title.text if title is not None else "",
-        "published": published.text if published is not None else "",
-        "url": f"https://www.youtube.com/watch?v={vid.text}" if vid is not None else "",
-    }
+    entries = []
+    for entry in root.findall("atom:entry", NS):
+        vid = entry.find("yt:videoId", NS)
+        if vid is None or not vid.text:
+            continue
+        title = entry.find("atom:title", NS)
+        entries.append({
+            "video_id": vid.text,
+            "title": title.text if title is not None else "",
+            "url": f"https://www.youtube.com/watch?v={vid.text}",
+            "is_short": _is_short(entry),
+        })
+    return entries
 
 
 def main():
@@ -145,30 +164,48 @@ def main():
         cid = ch["channel_id"]
         name = ch["name"]
         try:
-            latest = fetch_latest(cid)
+            entries = fetch_entries(cid)
         except Exception as e:
             print(f"  [{name}] erreur RSS : {e}")
             continue
-        if not latest or not latest["video_id"]:
+        if not entries:
             print(f"  [{name}] pas de vidéo trouvée")
             continue
 
+        newest_id = entries[0]["video_id"]
         known = state.get(cid)
         # Chaîne jamais vue (premier lancement, reset, ou chaîne ajoutée
         # après coup) : on enregistre sa vidéo actuelle SANS notifier.
         if first_run or reset or known is None:
-            state[cid] = latest["video_id"]
+            state[cid] = newest_id
             continue
 
-        if latest["video_id"] != known:
+        if newest_id == known:
+            time.sleep(0.2)
+            continue
+
+        # Nouveautés = entrées plus récentes que la dernière connue. On
+        # s'arrête à `known`. Si `known` est tombé du flux (trop ancien), on
+        # ne prend que la plus récente pour éviter un envoi massif.
+        new_entries = []
+        for e in entries:
+            if e["video_id"] == known:
+                break
+            new_entries.append(e)
+        else:
+            new_entries = entries[:1]
+
+        # On notifie du plus ancien au plus récent (ordre chronologique), et
+        # UNIQUEMENT les vraies vidéos : les Shorts sont ignorés.
+        for e in reversed(new_entries):
+            if e["is_short"]:
+                log(f"⏭️  [{name}] Short ignoré : {e['title']}")
+                continue
             new_count += 1
-            log(f"🆕 [{name}] {latest['title']} ({latest['url']})")
-            send_ntfy(
-                f"🎬 {name} a posté !",
-                latest["title"],
-                latest["url"],
-            )
-            state[cid] = latest["video_id"]
+            log(f"🆕 [{name}] {e['title']} ({e['url']})")
+            send_ntfy(f"🎬 {name} a posté !", e["title"], e["url"])
+
+        state[cid] = newest_id
         time.sleep(0.2)  # léger délai pour ne pas marteler YouTube
 
     save_state(state)

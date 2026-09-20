@@ -1,11 +1,13 @@
 name: Surveillance YouTube
 
-# Tourne toutes les 15 min dans le cloud (indépendant de ton PC).
+# Tourne toutes les 5 min dans le cloud (indépendant de ton PC). C'est
+# l'intervalle minimum autorisé par GitHub Actions.
 # Note : les horaires GitHub sont "au mieux" et peuvent avoir quelques minutes
-# de retard sous charge, ce qui est sans importance ici.
+# de retard sous charge ; de plus le flux RSS de YouTube est lui-même mis en
+# cache quelques minutes -> un petit délai reste normal, mais bien plus court.
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:      # bouton "Run workflow" pour lancer à la main
     inputs:
       test:
