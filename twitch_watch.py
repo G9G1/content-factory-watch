@@ -138,13 +138,19 @@ def main():
         user = ch["user"]
         name = ch.get("name", user)
         current = fetch_recent_clip_ids(user)
-        if not current:
-            continue
-
         known = state.get(user)
-        # Streamer jamais vu (ou reset) : on enregistre sans notifier.
+
+        # Streamer jamais vu (ou reset) : on enregistre une référence SANS
+        # notifier — même si `current` est vide (streamer inactif). Ainsi, quand
+        # il streamera, ses clips seront vus comme NOUVEAUX (et donc notifiés),
+        # au lieu d'être avalés silencieusement comme un "premier passage".
         if known is None or reset:
             state[user] = current[:CAP]
+            time.sleep(0.3)
+            continue
+
+        # Déjà connu mais rien de récent ce coup-ci : on garde l'état tel quel.
+        if not current:
             time.sleep(0.3)
             continue
 
