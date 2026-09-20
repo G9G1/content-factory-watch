@@ -322,8 +322,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips fous !",
       "score": 1633,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-20 21:44:25",
+      "slot": "21:44"
     },
     {
       "clip_id": "twitch_4135897457",
@@ -471,5 +471,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-20-20"
+  "last_slot_key": "2026-09-20-21"
 }
