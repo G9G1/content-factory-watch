@@ -153,9 +153,13 @@ def post_next(force: bool = False) -> None:
         return
 
     slot = t.strftime("%H:%M")
+    source = nxt.get("source", "")
+    dossier = f"📁 Dossier Fichiers : {source}\n" if source else ""
     body = (
         f"🎬 {nxt['title']}\n"
-        f"📲 Poste le prochain clip de ta pellicule sur : {' + '.join(PLATFORMS)}\n\n"
+        f"{dossier}"
+        f"📲 Ouvre l'app Fichiers, enregistre le clip dans Photos, puis poste "
+        f"sur : {' + '.join(PLATFORMS)}\n\n"
         f"— Légende à copier —\n{_caption(nxt)}"
     )
     ok = send_ntfy(f"📅 {slot} — C'est l'heure de poster !", body)
