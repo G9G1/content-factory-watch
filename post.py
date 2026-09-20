@@ -159,7 +159,8 @@ def post_next(force: bool = False) -> None:
         f"🎬 {nxt['title']}\n"
         f"{dossier}"
         f"📲 Ouvre l'app Fichiers, enregistre le clip dans Photos, puis poste "
-        f"sur : {' + '.join(PLATFORMS)}\n\n"
+        f"sur : {' + '.join(PLATFORMS)}\n"
+        f"📖 Partage-le AUSSI en Story (Insta/TikTok) — ça booste l'audience !\n\n"
         f"— Légende à copier —\n{_caption(nxt)}"
     )
     ok = send_ntfy(f"📅 {slot} — C'est l'heure de poster !", body)
