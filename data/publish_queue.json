@@ -82,8 +82,8 @@
       ],
       "cta": "Regarde comment ça continue !",
       "score": 88,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip6",
@@ -99,8 +99,8 @@
       ],
       "cta": "Partage si tu as autant rigolé que nous !",
       "score": 87,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip8",
@@ -116,8 +116,8 @@
       ],
       "cta": "Dis-nous en commentaire si tu aurais fait pareil !",
       "score": 85,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip9",
@@ -133,8 +133,8 @@
       ],
       "cta": "Follow pour la suite de cette négociation folle !",
       "score": 84,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "TkbNbL_0HCI_clip10",
@@ -150,8 +150,8 @@
       ],
       "cta": "Like si tu trouves ça aussi absurde que nous !",
       "score": 82,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip1",
@@ -167,8 +167,8 @@
       ],
       "cta": "Abonne-toi pour voir la suite de ce défi hors norme !",
       "score": 95,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip2",
@@ -184,8 +184,8 @@
       ],
       "cta": "Combien tu penses qu'on a trouvé ? Commente ton estimation !",
       "score": 93,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip3",
@@ -201,8 +201,8 @@
       ],
       "cta": "Ça t'est déjà arrivé ? Dis-le en commentaire !",
       "score": 91,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip4",
@@ -218,8 +218,8 @@
       ],
       "cta": "Tu penses que c'est un vrai ou un faux ? Réponds en commentaire !",
       "score": 89,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip5",
@@ -235,8 +235,8 @@
       ],
       "cta": "Tu aurais mangé la pizza ? 😂 Dis-nous en commentaire !",
       "score": 87,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip6",
@@ -252,8 +252,8 @@
       ],
       "cta": "Les belles rencontres comme ça, ça fait toute la différence. Partage si ça t'a touché !",
       "score": 85,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip7",
@@ -269,8 +269,8 @@
       ],
       "cta": "Cette phrase t'a marqué toi aussi ? Dis-le en commentaire !",
       "score": 84,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     },
     {
       "clip_id": "HpX5R9rq-1M_clip8",
@@ -286,9 +286,9 @@
       ],
       "cta": "Tu aurais pris ce piano ? Like si oui !",
       "score": 82,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "test-ignore",
+      "slot": "test"
     }
   ],
-  "last_post_ts": 1789914436.4070415
+  "last_post_ts": 0
 }
