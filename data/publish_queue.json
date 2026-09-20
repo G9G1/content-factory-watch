@@ -304,9 +304,10 @@
       ],
       "cta": "Abonne-toi pour plus de clips fous !",
       "score": 2180,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-20 20:25:33",
+      "slot": "20:25"
     }
   ],
-  "last_post_ts": 0
+  "last_post_ts": 0,
+  "last_slot_key": "2026-09-20-20"
 }
