@@ -288,6 +288,24 @@
       "score": 82,
       "posted_at": "test-ignore",
       "slot": "test"
+    },
+    {
+      "clip_id": "twitch_3099904837",
+      "source": "Twitch — nico_la (clips communauté)",
+      "title": "Comment devenir le MEILLEUR clipeur de Nico ?!",
+      "description": "Nico dévoile le concours de clips Dakar Paris... et ça part vite en délire sur la hate 😂",
+      "hashtags": [
+        "#nicola",
+        "#clip",
+        "#dakarparis",
+        "#twitchfr",
+        "#streamer",
+        "#humour"
+      ],
+      "cta": "Abonne-toi pour plus de clips fous !",
+      "score": 2180,
+      "posted_at": null,
+      "slot": null
     }
   ],
   "last_post_ts": 0
