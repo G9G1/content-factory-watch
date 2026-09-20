@@ -1,14 +1,14 @@
 """
 Rappels de publication dans le cloud (GitHub Actions).
 
-Une fois par heure, de 07:00 à 23:00 (heure de Paris), envoie une notif ntfy
-avec le prochain clip à poster : titre + légende + hashtags prêts à copier-
-coller. Tu publies MANUELLEMENT depuis ton iPhone le clip correspondant de ta
-pellicule (Photos), sur YouTube Short + Instagram + TikTok.
+À 5 créneaux par jour (12h, 16h, 18h, 20h, 22h, heure de Paris), envoie une
+notif ntfy avec le prochain clip à poster : titre + légende + hashtags prêts à
+copier-coller. Tu publies MANUELLEMENT depuis ton iPhone (dossier Fichiers ->
+Photos), sur YouTube Short + Instagram + TikTok.
 
 Fiabilité : le workflow se réveille souvent (toutes les ~15 min) mais on
-n'envoie qu'UN rappel par heure d'horloge (repère `last_slot_key`). Ainsi,
-même si GitHub saute ou retarde un réveil, le rappel de l'heure part quand même
+n'envoie qu'UN rappel par heure de créneau (repère `last_slot_key`). Ainsi,
+même si GitHub saute ou retarde un réveil, le rappel du créneau part quand même
 dès le prochain réveil de la même heure (logique « auto-rattrapante »).
 
 Tourne dans le cloud (indépendant du PC de Gaëtan, souvent éteint). La file
@@ -38,8 +38,9 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 QUEUE_PATH = os.path.join(ROOT, "data", "publish_queue.json")
 
 PLATFORMS = ["YouTube Short", "Instagram", "TikTok"]
-# Créneaux (heure de Paris) : toutes les heures de 7 h à 23 h inclus -> 17/jour.
-SLOT_HOURS = set(range(7, 24))  # {7, 8, ..., 23}
+# Créneaux (heure de Paris) : 5 par jour, concentrés sur les heures de pointe
+# (midi + soirée) -> mieux vaut 5 bons posts bien placés que 17 étalés.
+SLOT_HOURS = {12, 16, 18, 20, 22}
 
 
 def now_paris() -> datetime:
