@@ -484,8 +484,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips choc !",
       "score": 1971,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-21 16:06:17",
+      "slot": "16:06"
     },
     {
       "clip_id": "twitch_2900696019",
@@ -507,5 +507,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-20-21"
+  "last_slot_key": "2026-09-21-16"
 }
