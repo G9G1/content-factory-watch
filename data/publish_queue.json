@@ -538,8 +538,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips délirants !",
       "score": 356,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "passe",
+      "slot": "passé"
     },
     {
       "clip_id": "twitch_1131351501",
@@ -574,8 +574,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips fous !",
       "score": 330,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "passe",
+      "slot": "passé"
     },
     {
       "clip_id": "twitch_2626688443",
@@ -628,8 +628,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips délirants !",
       "score": 303,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "passe",
+      "slot": "passé"
     }
   ],
   "last_post_ts": 0,
