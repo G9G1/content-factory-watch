@@ -630,6 +630,90 @@
       "score": 303,
       "posted_at": "passe",
       "slot": "passé"
+    },
+    {
+      "clip_id": "N4KYurF7ksY_clip1",
+      "source": "je suis SPIDERMAN !",
+      "title": "Le chien de Mika débarque en plein live 🐶",
+      "description": "Un moment complètement délirant où le streamer se met à imiter un chien sans prévenir. À voir absolument !",
+      "hashtags": [
+        "#twitch",
+        "#live",
+        "#humour",
+        "#fail",
+        "#viral"
+      ],
+      "cta": "Abonne-toi pour plus de moments fous en live !",
+      "score": 92,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "N4KYurF7ksY_clip2",
+      "source": "je suis SPIDERMAN !",
+      "title": "Un tour de magie qui bluffe tout le monde en live",
+      "description": "Personne n'a compris comment ce tour de magie a été fait... même pas le streamer !",
+      "hashtags": [
+        "#magie",
+        "#reaction",
+        "#wtf",
+        "#live",
+        "#surprise"
+      ],
+      "cta": "Devine comment il a fait le tour en commentaire !",
+      "score": 88,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "N4KYurF7ksY_clip3",
+      "source": "je suis SPIDERMAN !",
+      "title": "Ma coloc a cru qu'il y avait un cheval chez moi",
+      "description": "Une situation totalement improbable qui a fait halluciner tout le monde en live.",
+      "hashtags": [
+        "#anecdote",
+        "#drole",
+        "#livehighlight",
+        "#tiktokstory"
+      ],
+      "cta": "Tag quelqu'un qui capterait rien à cette histoire !",
+      "score": 85,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "N4KYurF7ksY_clip4",
+      "source": "je suis SPIDERMAN !",
+      "title": "La rivalité France vs Angleterre en LAN esport",
+      "description": "Retour sur un moment intense vécu en direct au milieu de la communauté pendant une compétition esport.",
+      "hashtags": [
+        "#esport",
+        "#gaming",
+        "#competition",
+        "#lan",
+        "#france"
+      ],
+      "cta": "Tu supportes quelle équipe ? Dis-le en commentaire !",
+      "score": 80,
+      "posted_at": null,
+      "slot": null
+    },
+    {
+      "clip_id": "N4KYurF7ksY_clip5",
+      "source": "je suis SPIDERMAN !",
+      "title": "You want to play, let's play 😂",
+      "description": "Une phrase répétée en boucle avec une voix improbable qui devient de plus en plus drôle à chaque fois.",
+      "hashtags": [
+        "#meme",
+        "#voix",
+        "#humour",
+        "#stream",
+        "#funny"
+      ],
+      "cta": "Essaie de le dire avec la même voix en commentaire !",
+      "score": 78,
+      "posted_at": null,
+      "slot": null
     }
   ],
   "last_post_ts": 0,
