@@ -729,8 +729,8 @@
       ],
       "cta": "Abonne-toi pour plus de moments cultes de McFly et Carlito !",
       "score": 93,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-23 16:37:42",
+      "slot": "16:37"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip2",
@@ -1006,5 +1006,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-21-16"
+  "last_slot_key": "2026-09-23-16"
 }
