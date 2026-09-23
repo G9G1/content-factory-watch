@@ -154,13 +154,9 @@ def post_next(force: bool = False) -> None:
         return
 
     slot = t.strftime("%H:%M")
-    source = nxt.get("source", "")
-    dossier = f"📁 Dossier Fichiers : {source}\n" if source else ""
     body = (
         f"🎬 {nxt['title']}\n"
-        f"{dossier}"
-        f"📲 Ouvre l'app Fichiers, enregistre le clip dans Photos, puis poste "
-        f"sur : {' + '.join(PLATFORMS)}\n"
+        f"📲 Poste ce clip depuis ta galerie sur : {' + '.join(PLATFORMS)}\n"
         f"📖 Partage-le AUSSI en Story (Insta/TikTok) — ça booste l'audience !\n\n"
         f"— Légende à copier —\n{_caption(nxt)}"
     )
