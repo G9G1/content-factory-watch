@@ -746,8 +746,8 @@
       ],
       "cta": "Tag quelqu'un qui a halluciné en regardant ça !",
       "score": 91,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-24 20:31:33",
+      "slot": "20:31"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip3",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-24-16"
+  "last_slot_key": "2026-09-24-20"
 }
