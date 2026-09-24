@@ -1036,8 +1036,8 @@
       ],
       "cta": "Abonne-toi pour la suite du road trip le plus chaotique !",
       "score": 94,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-24 16:26:31",
+      "slot": "16:26"
     },
     {
       "clip_id": "ffSyBdcD958_clip2",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-23-20"
+  "last_slot_key": "2026-09-24-16"
 }
