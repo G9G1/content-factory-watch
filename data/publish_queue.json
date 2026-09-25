@@ -882,8 +882,8 @@
       ],
       "cta": "Et toi, tu préfères être riche ou libre ? Dis-le en commentaire",
       "score": 92,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-25 16:55:06",
+      "slot": "16:55"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip3",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-24-20"
+  "last_slot_key": "2026-09-25-16"
 }
