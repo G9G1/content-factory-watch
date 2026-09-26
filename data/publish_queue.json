@@ -1053,8 +1053,8 @@
       ],
       "cta": "Like si t'as autant ri qu'eux étaient dégoûtés !",
       "score": 92,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-26 12:15:20",
+      "slot": "12:15"
     },
     {
       "clip_id": "ffSyBdcD958_clip3",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-25-16"
+  "last_slot_key": "2026-09-26-12"
 }
