@@ -899,8 +899,8 @@
       ],
       "cta": "Partage cette vidéo, la prévention sauve des vies 🙏",
       "score": 90,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-26 20:00:52",
+      "slot": "20:00"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip4",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-26-16"
+  "last_slot_key": "2026-09-26-20"
 }
