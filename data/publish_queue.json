@@ -763,8 +763,8 @@
       ],
       "cta": "Follow pour plus d'anecdotes insolites sur la langue française !",
       "score": 89,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-26 16:36:28",
+      "slot": "16:36"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip4",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-26-12"
+  "last_slot_key": "2026-09-26-16"
 }
