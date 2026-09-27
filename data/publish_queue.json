@@ -1070,8 +1070,8 @@
       ],
       "cta": "Dis-nous en commentaire si t'as un pote comme ça !",
       "score": 90,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-27 22:24:47",
+      "slot": "22:24"
     },
     {
       "clip_id": "ffSyBdcD958_clip4",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-26-20"
+  "last_slot_key": "2026-09-27-22"
 }
