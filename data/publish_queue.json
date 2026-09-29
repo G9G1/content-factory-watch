@@ -695,8 +695,8 @@
       ],
       "cta": "Tu supportes quelle équipe ? Dis-le en commentaire !",
       "score": 80,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-09-29 16:02:13",
+      "slot": "16:02"
     },
     {
       "clip_id": "N4KYurF7ksY_clip5",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-27-22"
+  "last_slot_key": "2026-09-29-16"
 }
