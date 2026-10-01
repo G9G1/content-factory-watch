@@ -780,8 +780,8 @@
       ],
       "cta": "Commente ton mot préféré sans la lettre F !",
       "score": 87,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-01 18:25:52",
+      "slot": "18:25"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip5",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-09-29-16"
+  "last_slot_key": "2026-10-01-18"
 }
