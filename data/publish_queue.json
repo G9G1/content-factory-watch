@@ -916,8 +916,8 @@
       ],
       "cta": "Tag un ami qui sentirait pire qu'eux 😂",
       "score": 87,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-02 20:09:56",
+      "slot": "20:09"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip6",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-01-18"
+  "last_slot_key": "2026-10-02-20"
 }
