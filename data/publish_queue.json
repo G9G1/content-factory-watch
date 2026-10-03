@@ -1087,8 +1087,8 @@
       ],
       "cta": "Tag quelqu'un qui aurait posé la même question !",
       "score": 88,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-03 20:46:23",
+      "slot": "20:46"
     },
     {
       "clip_id": "ffSyBdcD958_clip5",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-02-20"
+  "last_slot_key": "2026-10-03-20"
 }
