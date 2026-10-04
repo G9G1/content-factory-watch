@@ -712,8 +712,8 @@
       ],
       "cta": "Essaie de le dire avec la même voix en commentaire !",
       "score": 78,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-04 18:54:59",
+      "slot": "18:54"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip1",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-03-20"
+  "last_slot_key": "2026-10-04-18"
 }
