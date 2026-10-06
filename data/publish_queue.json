@@ -1104,8 +1104,8 @@
       ],
       "cta": "Active le son pour entendre sa réponse !",
       "score": 87,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-06 22:57:34",
+      "slot": "22:57"
     },
     {
       "clip_id": "ffSyBdcD958_clip6",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-06-18"
+  "last_slot_key": "2026-10-06-22"
 }
