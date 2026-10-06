@@ -933,8 +933,8 @@
       ],
       "cta": "Abonne-toi pour voir sa réaction à la surprise !",
       "score": 85,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-06 18:04:53",
+      "slot": "18:04"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip7",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-05-18"
+  "last_slot_key": "2026-10-06-18"
 }
