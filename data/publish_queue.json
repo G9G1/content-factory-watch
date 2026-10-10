@@ -1121,8 +1121,8 @@
       ],
       "cta": "Essaie de deviner avant eux en commentaire !",
       "score": 85,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-10 22:12:24",
+      "slot": "22:12"
     },
     {
       "clip_id": "ffSyBdcD958_clip7",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-10-18"
+  "last_slot_key": "2026-10-10-22"
 }
