@@ -950,8 +950,8 @@
       ],
       "cta": "Combien tu penses qu'il pèse vraiment ? 👀",
       "score": 83,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-10 18:22:30",
+      "slot": "18:22"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip8",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-09-22"
+  "last_slot_key": "2026-10-10-18"
 }
