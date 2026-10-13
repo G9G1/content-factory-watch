@@ -831,8 +831,8 @@
       ],
       "cta": "Partage si tu ne verras plus jamais le PQ pareil !",
       "score": 80,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-13 18:11:20",
+      "slot": "18:11"
     },
     {
       "clip_id": "8BhWoVSBtwc_clip8",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-10-22"
+  "last_slot_key": "2026-10-13-18"
 }
