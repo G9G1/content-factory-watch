@@ -967,8 +967,8 @@
       ],
       "cta": "Toi tu penses qu'il l'a retrouvé ? Dis-le en commentaire",
       "score": 82,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-14 12:08:29",
+      "slot": "12:08"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip9",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-13-18"
+  "last_slot_key": "2026-10-14-12"
 }
