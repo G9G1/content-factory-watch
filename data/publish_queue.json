@@ -848,8 +848,8 @@
       ],
       "cta": "Dis-nous dans les commentaires si tu savais ça !",
       "score": 77,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-15 20:38:51",
+      "slot": "20:38"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip1",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-15-16"
+  "last_slot_key": "2026-10-15-20"
 }
