@@ -1138,8 +1138,8 @@
       ],
       "cta": "Dis en commentaire à quel perso Disney tu ressembles !",
       "score": 82,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-15 16:35:35",
+      "slot": "16:35"
     },
     {
       "clip_id": "ffSyBdcD958_clip8",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-14-12"
+  "last_slot_key": "2026-10-15-16"
 }
