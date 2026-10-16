@@ -984,8 +984,8 @@
       ],
       "cta": "La générosité humaine existe encore, partage cette vidéo !",
       "score": 78,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-16 22:04:01",
+      "slot": "22:04"
     },
     {
       "clip_id": "DSiLnk5AlCE_clip10",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-15-20"
+  "last_slot_key": "2026-10-16-22"
 }
