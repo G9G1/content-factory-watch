@@ -1001,8 +1001,8 @@
       ],
       "cta": "Ça sent le début de galère... reste pour la suite !",
       "score": 75,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-17 20:39:22",
+      "slot": "20:39"
     },
     {
       "clip_id": "twitch_1373112364",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-17-18"
+  "last_slot_key": "2026-10-17-20"
 }
