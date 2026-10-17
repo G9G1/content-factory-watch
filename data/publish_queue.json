@@ -1019,8 +1019,8 @@
       ],
       "cta": "Abonne-toi pour plus de clips chauds 🔥",
       "score": 2440,
-      "posted_at": null,
-      "slot": null
+      "posted_at": "2026-10-17 22:57:27",
+      "slot": "22:57"
     },
     {
       "clip_id": "ffSyBdcD958_clip1",
@@ -1160,5 +1160,5 @@
     }
   ],
   "last_post_ts": 0,
-  "last_slot_key": "2026-10-17-20"
+  "last_slot_key": "2026-10-17-22"
 }
